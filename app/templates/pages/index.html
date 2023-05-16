@@ -1,0 +1,18 @@
+{% extends 'layouts/base.html' %}
+{% import 'bootstrap/wtf.html' as bootstrap_form %}
+
+{% block title %}
+    {{ 'Home' if not title else title }}
+{% endblock title %}
+
+{% block app_content %}
+    <div class='row pb-4'>
+        <div class='col-md-6 offset-md-3'>
+            <h1>Hello, {{ current_user.name }}!</h1>
+            {% if form %}
+                {{ bootstrap_form.quick_form(form) }}
+            {% endif %}
+        </div>
+    </div>
+    {% include 'includes/_posts.html' %}
+{% endblock %}

@@ -1,0 +1,13 @@
+<div class="card mb-2">
+  <div class="card-body">
+    <h5 class="card-title">
+        <a href="{{ url_for('user', name=post.author.name) }}">
+            {{ post.author.name }}
+        </a>
+    </h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+        {{ moment(post.timestamp).fromNow() }}
+    </h6>
+    <p class="card-text">{{ post.body }}</p>
+  </div>
+</div>
